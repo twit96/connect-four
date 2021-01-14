@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Connect Four</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/icon.png" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/connect-four.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="wrapper">
+        <h1>Connect Four</h1>
+        <span id="timer">0</span>
+      </div>
+    </header>
+
+    <section id="board">
+      <div class="wrapper"></div>
+    </section>
+
+    <footer>
+      <div class="wrapper">
+        <button id="restart" onclick="restart()">Restart</button>
+        <div>
+          <h3 class="turn-indicator" id="player1">Player 1</h3>
+          <h3 class="turn-indicator" id="player2">Player 2</h3>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>
