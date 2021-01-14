@@ -178,7 +178,8 @@ function makeMove(clicked_elem, clicked_id) {
 
 // --------------------------------------------------------------- Restart Game
 function restart() {
-  // restart timer
+  // reset timer
+  clearInterval(timer_interval);
   setTimer();
 
   // reset visual elements
