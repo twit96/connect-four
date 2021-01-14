@@ -127,6 +127,10 @@ function handleWin(arr, winner) {
     p2_ind.style.borderColor = 'var(--green-shadow)';
     p1_ind.style.borderColor = 'var(--blue)';
   }
+  // remove onclick listeners
+  for (var i=0; i<7; i++) {
+    document.getElementById('c-' + i).removeAttribute('onclick');
+  }
 }
 
 
@@ -202,6 +206,11 @@ function restart() {
         curr_elem.removeChild(curr_elem.lastChild);
       }
     }
+  }
+
+  // add onclick listeners back (removed on win)
+  for (var i=0; i<7; i++) {
+    document.getElementById('c-' + i).setAttribute('onclick', 'makeMove(this, this.id)')
   }
 
   // reset current player
