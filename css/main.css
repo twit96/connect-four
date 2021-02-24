@@ -37,14 +37,22 @@ body {
 header, footer {
   color: white;
   background: var(--blue);
+  position: fixed;
+  left: 0; right: 0;
   /* bottom shadow */
   -moz-box-shadow: 0 0 0.5rem var(--shadow-color);
   -webkit-box-shadow: 0 0 0.5rem var(--shadow-color);
   box-shadow: 0 0 0.5rem var(--shadow-color);
 }
 
-header { border-bottom: 0.5rem solid var(--blue-shadow); }
-footer { border-top: 0.5rem solid var(--blue-shadow); }
+header {
+  top: 0;
+  border-bottom: 0.5rem solid var(--blue-shadow);
+}
+footer {
+  bottom: 0;
+  border-top: 0.5rem solid var(--blue-shadow);
+}
 
 header .wrapper, footer .wrapper {
   display: flex;
@@ -100,6 +108,12 @@ footer button:focus {
 }
 
 /* Board ------------------------------------------------------------------- */
+#board {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #board .wrapper {
   padding: 0;
   width: 84vmin;
