@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+/* prevent landscape orientation */
+@media (orientation: landscape) {
+  html { transform: rotate(-90deg); }
+}
+
 body {
   font-family: Verdana, Geneva, sans-serif;
   height: 100vh;
