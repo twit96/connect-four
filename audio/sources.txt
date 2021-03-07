@@ -1,0 +1,4 @@
+Zapsplat.com Audio Sources:
+
+drop_sound: Poker chip stack on top of another 1
+win_sound: Game tone, bright and warm synth, win award 3

@@ -1,3 +1,8 @@
+// ---------------------------------------------------------------------- Audio
+var drop_sound = document.getElementById("drop_sound");
+var win_sound = document.getElementById("win_sound");
+
+
 // ---------------------------------------------------------------------- Timer
 var time;
 function setTimer() {
@@ -106,6 +111,8 @@ function checkWin() {
 }
 
 function handleWin(arr, winner) {
+  win_sound.play();
+  
   // stop timer
   clearInterval(timer_interval);
   // color pieces
@@ -160,20 +167,21 @@ function makeMove(clicked_elem, clicked_id) {
   const coords = clicked_id.split('-');
   const x = coords[1];  // col coord
 
-  // Create Turn Element
-  var move = document.createElement('span');
-  move.classList.add(curr_player);
-
   // Update Game
   for (var i = moves[x].length -1; i >= 0; i--) {
     if (moves[x][i] == 0) {  // find lowest unplayed box element in column
-      moves[x][i] = curr_player;  // update moves array
+      // update moves array
+      moves[x][i] = curr_player;
+      // create turn element
+      var move = document.createElement('span');
+      move.classList.add(curr_player);
       // add turn element to board
       var played_elem = document.getElementById("b-" + x + "-" + i.toString());
       played_elem.insertAdjacentElement('beforeend', move);
 
       updatePlayer();  // Update Current Player
       checkWin();  // Check For Win
+      drop_sound.play();
       break;  // terminate loop
     }
   }
